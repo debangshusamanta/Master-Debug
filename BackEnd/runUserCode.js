@@ -1,106 +1,94 @@
 import fs from 'fs';
+import { exec } from 'child_process';
 import path from 'path';
-import { spawn } from 'child_process';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import os from 'os';
+import crypto from 'crypto';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const tempDir = os.tmpdir(); // safer cross-platform temp folder
 
-const tempDir = path.join(__dirname, 'temp');
-if (!fs.existsSync(tempDir)) fs.mkdirSync(tempDir);
+const generateUniqueFilename = (language) => {
+  const id = crypto.randomBytes(6).toString('hex');
+  if (language === 'java') return `Main_${id}`;
+  return `temp-${id}`;
+};
 
-function detectLanguage(code) {
-  if (code.includes('#include') && code.includes('int main')) return 'cpp';
-  if (code.includes('public class') || code.includes('System.out')) return 'java';
-  if (code.includes('def ') || code.includes('print(')) return 'python';
-  return null;
-}
-
-export default function runUserCode(code, input = "", languageOverride = "") {
+const runCode = (language, code, input) => {
   return new Promise((resolve, reject) => {
-    if (!code || typeof code !== 'string') return reject("❌ Code is empty or invalid.");
+    const filename = generateUniqueFilename(language);
+    let filePath = '';
+    let compileCmd = [];
+    let runCmd = [];
 
-    const language = languageOverride || detectLanguage(code);
-    if (!language) return reject("❌ Could not detect language from code.");
-
-    const filename = language === 'java' ? 'Main' : `temp-${Date.now()}`;
-    let fileExt = '', compileCmd = [], runCmd = [];
-
+    // File setup
     switch (language) {
       case 'cpp':
-        fileExt = 'cpp';
-        compileCmd = ['g++', `${tempDir}/${filename}.cpp`, '-o', `${tempDir}/${filename}`];
-        runCmd = [`${tempDir}/${filename}`];
+        filePath = path.join(tempDir, `${filename}.cpp`);
+        compileCmd = ['g++', filePath, '-o', path.join(tempDir, filename)];
+        runCmd = [path.join(tempDir, filename)];
         break;
-
       case 'java':
-        fileExt = 'java';
-        compileCmd = ['javac', `${tempDir}/${filename}.java`];
+        filePath = path.join(tempDir, `${filename}.java`);
+        compileCmd = ['javac', filePath];
         runCmd = ['java', '-cp', tempDir, filename];
         break;
-
       case 'python':
-        fileExt = 'py';
-        runCmd = ['python', `${tempDir}/${filename}.py`];
+        filePath = path.join(tempDir, `${filename}.py`);
+        runCmd = ['python', filePath];
         break;
-
-      case 'js':
-        fileExt = 'js';
-        runCmd = ['node', `${tempDir}/${filename}.js`];
+      case 'javascript':
+        filePath = path.join(tempDir, `${filename}.js`);
+        runCmd = ['node', filePath];
         break;
-
       default:
-        return reject("❌ Unsupported language.");
+        return reject("Unsupported language");
     }
 
-    const filePath = `${tempDir}/${filename}.${fileExt}`;
-    fs.writeFileSync(filePath, code);
+    // Write file
+    try {
+      fs.writeFileSync(filePath, code);
+    } catch (err) {
+      return reject("❌ Failed to write file: " + err.message);
+    }
 
-    const runProcess = () => {
-      const proc = spawn(runCmd[0], runCmd.slice(1), { timeout: 8000 });
-
-      let stdout = '', stderr = '';
-
-      proc.stdout.on('data', (data) => stdout += data.toString());
-      proc.stderr.on('data', (data) => stderr += data.toString());
-
-      // 🟢 Feed input only if non-empty, always end stdin
-      if (typeof input === 'string') {
-        proc.stdin.write(input.endsWith('\n') ? input : input + '\n');
-        proc.stdin.end();
-      }
-
-      proc.on('close', (exitCode) => {
-        try {
-          fs.unlinkSync(filePath);
-          if (language === 'cpp') fs.unlinkSync(`${tempDir}/${filename}`);
-          if (language === 'java') fs.unlinkSync(`${tempDir}/${filename}.class`);
-        } catch {}
-
-        if (exitCode !== 0) {
-          return reject(`❌ Execution failed with exit code ${exitCode}:\n${stderr}`);
-        }
-
-        resolve(stdout || "✅ Code ran successfully, but no output.");
+    const runCompiledCode = () => {
+      const execProcess = exec(runCmd.join(' '), (err, stdout, stderr) => {
+        cleanupFiles(); // Cleanup no matter what
+        if (err) return reject(stderr || err.message);
+        return resolve(stdout);
       });
+
+      if (input) {
+        execProcess.stdin.write(input);
+        execProcess.stdin.end();
+      }
     };
 
-    if (compileCmd.length > 0) {
-      const compile = spawn(compileCmd[0], compileCmd.slice(1));
-      let compileErr = '';
-
-      compile.stderr.on('data', (data) => compileErr += data.toString());
-
-      compile.on('close', (exitCode) => {
-        if (exitCode !== 0) {
-          try { fs.unlinkSync(filePath); } catch {}
-          return reject(`❌ Compilation failed:\n${compileErr}`);
+    const cleanupFiles = () => {
+      try {
+        if (fs.existsSync(filePath)) fs.unlinkSync(filePath); // source
+        if (language === 'cpp' && fs.existsSync(path.join(tempDir, filename))) {
+          fs.unlinkSync(path.join(tempDir, filename)); // binary
         }
-        runProcess();
+        if (language === 'java' && fs.existsSync(path.join(tempDir, `${filename}.class`))) {
+          fs.unlinkSync(path.join(tempDir, `${filename}.class`));
+        }
+      } catch (cleanupErr) {
+        console.warn("⚠️ Cleanup warning:", cleanupErr.message);
+      }
+    };
+
+    if (language === 'cpp' || language === 'java') {
+      exec(compileCmd.join(' '), (err, stdout, stderr) => {
+        if (err) {
+          cleanupFiles();
+          return reject(stderr || err.message);
+        }
+        runCompiledCode();
       });
     } else {
-      runProcess();
+      runCompiledCode(); // No compile step
     }
   });
-}
+};
+
+export default runCode;

@@ -13,10 +13,14 @@
   "description": "",
   "dependencies": {
     "body-parser": "^2.2.0",
+    "child_process": "^1.0.2",
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
+    "fs": "^0.0.1-security",
     "nodemailer": "^7.0.5",
+    "os": "^0.1.2",
     "ws": "^8.18.3"
   }
 }
