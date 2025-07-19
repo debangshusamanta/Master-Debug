@@ -1,0 +1,352 @@
+[
+  {
+    "id": 1,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string first = \"Code\";\n    string second = \"Blocks\";\n    String result = first + Second;\n    cout << result << endl;\n    return 0;\n}",
+    "output": "CodeBlocks",
+    "correct_output": "CodeBlocks",
+    "hint": "Check for bugs at: Line 8"
+  },
+  {
+    "id": 2,
+    "code": "#include <iostream>\n\nint main() {\n    for (int i = 1; i <= 5; +i) {\n        std::cout >> \"Loop iteration: \" >> i >> std::endl;\n    }\n    return 0;\n}",
+    "output": "Loop iteration: 1\nLoop iteration: 2\nLoop iteration: 3\nLoop iteration: 4\nLoop iteration: 5",
+    "correct_output": "Loop iteration: 1\nLoop iteration: 2\nLoop iteration: 3\nLoop iteration: 4\nLoop iteration: 5",
+    "hint": "Check for bugs at: Line 4, 5"
+  },
+  {
+    "id": 3,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 3, b = 5. c = 7, d = 2;\n    int sum = a + b + c + d;\n    cout << \"Sum: \" >> sum << endl;\n    return 0;\n}",
+    "output": "Sum: 17",
+    "correct_output": "Sum: 17",
+    "hint": "Check for bugs at: Line 5, 7"
+  },
+  {
+    "id": 4,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 4, b = 6. c = 3, d = 2:\n    int sum = a + b + c + d;\n    cout << \"Total: \" << sum << endl;\n    return 0\n}",
+    "output": "Total: 15",
+    "correct_output": "Total: 15",
+    "hint": "Check for bugs at: Line 5, 8"
+  },
+  {
+    "id": 5,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string name = \\Alice\\;\n    cout << \"Hello, \" << name << \"!\" << end;\n    return 0;\n}",
+    "output": "Hello, Alice!",
+    "correct_output": "Hello, Alice!",
+    "hint": "Check for bugs at: Line 6, 7"
+  },
+  {
+    "id": 6,
+    "code": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nint main() {\n    double base = 2.0 exponent = 3.0;\n    cout << \"Power: \" << pow(base, exponent) << endl;\n    Return 0;\n}",
+    "output": "Power: 8",
+    "correct_output": "Power: 8",
+    "hint": "Check for bugs at: Line 6, 8"
+  },
+  {
+    "id": 7,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    char Ch = 'A';\n    cout << \"Character: \" << ch << endl;\n    cout << \"ASCII: \" << int(ch) << endl;\n    return 0\n}",
+    "output": "Character: A\nASCII: 65",
+    "correct_output": "Character: A\nASCII: 65",
+    "hint": "Check for bugs at: Line 5, 8"
+  },
+  {
+    "id": 8,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int x = 6;\n    int y = 7;\n    int sum = x - y;\n    cout << \"The sum is: \" << sum << endl;\n    return 0\n}",
+    "output": "The sum is: 13",
+    "correct_output": "The sum is: 13",
+    "hint": "Check for bugs at: Line 7, 9"
+  },
+  {
+    "id": 9,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Int x = 7;\n    Int y = 8;\n    int sum = x + y;\n    cout << \"The sum is: \" << sum << endl;\n    return 0;\n}",
+    "output": "The sum is: 15",
+    "correct_output": "The sum is: 15",
+    "hint": "Check for bugs at: Line 5, 6"
+  },
+  {
+    "id": 10,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int x = 8;\n    int Y = 9;\n    int sum = x + y;\n    cout >> \"The sum is: \" << sum << endl;\n    return 0;\n}",
+    "output": "The sum is: 17",
+    "correct_output": "The sum is: 17",
+    "hint": "Check for bugs at: Line 6, 8"
+  },
+  {
+    "id": 11,
+    "code": "#include <iostream>\n\nint main() {\n    int I = 1;\n    while (i <= 3) {\n        std::cout << \"While loop count: \" << i << std::endl;\n        i++\n    }\n    return 0;\n}",
+    "output": "While loop count: 1\nWhile loop count: 2\nWhile loop count: 3",
+    "correct_output": "While loop count: 1\nWhile loop count: 2\nWhile loop count: 3",
+    "hint": "Check for bugs at: Line 4, 7"
+  },
+  {
+    "id": 12,
+    "code": "#include <iostream>\n#include <string>\n\nint main() {\n    std::string greeting = \\Hello\\;\n    std::string name = \"World\";\n    std::string message = greeting + \", \" + name + \"!\";\n    std::cout << Message << std::endl;\n    return 0;\n}",
+    "output": "Hello, World!",
+    "correct_output": "Hello, World!",
+    "hint": "Check for bugs at: Line 5, 8"
+  },
+  {
+    "id": 13,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int arr[] = {1, 2, 3, 4, 5}\n    for (int i = 0; i < 5; i++) {\n        cout << arr[I] << ' ';\n    }\n    cout << endl;\n    return 0;\n}",
+    "output": "1 2 3 4 5",
+    "correct_output": "1 2 3 4 5",
+    "hint": "Check for bugs at: Line 5, 7"
+  },
+  {
+    "id": 14,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int arr[] = {10 20, 30, 40};\n    for(int i : 0; i < 4; i++) {\n        cout << arr[i] << ' ';\n    }\n    cout << endl;\n    return 0;\n}",
+    "output": "10 20 30 40",
+    "correct_output": "10 20 30 40",
+    "hint": "Check for bugs at: Line 5, 6"
+  },
+  {
+    "id": 15,
+    "code": "#include <iostream>\n\nint main() {\n    int a = 10;\n    int b = 20;\n    int c = 30:\n    int d = 40;\n    Int sum = a + b + c + d;\n    std::cout << \"Sum of four numbers: \" << sum << std::endl;\n    return 0;\n}",
+    "output": "Sum of four numbers: 100",
+    "correct_output": "Sum of four numbers: 100",
+    "hint": "Check for bugs at: Line 6, 8"
+  },
+  {
+    "id": 16,
+    "code": "#include <iostream>\n\nint main() {\n    int num : 15;\n    if (num % 2 == 0) {\n        std::cout << num << \" is an even number.\" << std::endl;\n    } Else {\n        std::cout << num << \" is an odd number.\" << std::endl;\n    }\n    return 0;\n}",
+    "output": "15 is an odd number.",
+    "correct_output": "15 is an odd number.",
+    "hint": "Check for bugs at: Line 4, 7"
+  },
+  {
+    "id": 17,
+    "code": "#include <iostream>\nusing namespace std;\n\nvoid greet() {\n    cout << \"Welcome to C++!\" << endl;\n}\n\nint main() {\n    greet;\n    return 0:\n}",
+    "output": "Welcome to C++!",
+    "correct_output": "Welcome to C++!",
+    "hint": "Check for bugs at: Line 9, 10"
+  },
+  {
+    "id": 18,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[] = {1, 2, 3};\n    int b[] = {4, 5, 6};\n    for (int i = 0: i < 3; i++) {\n        cout << a[i] * b[i] << ' ';\n    }\n    cout << endl;\n    Return 0;\n}",
+    "output": "4 10 18",
+    "correct_output": "4 10 18",
+    "hint": "Check for bugs at: Line 7, 11"
+  },
+  {
+    "id": 19,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int num = 10;\n    if (num   0) {\n        cout << \"Positive\" << endl;\n    } else {\n        cout << \"Non-positive\" << endl\n    }\n    return 0;\n}",
+    "output": "Positive",
+    "correct_output": "Positive",
+    "hint": "Check for bugs at: Line 6, 9"
+  },
+  {
+    "id": 20,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 10;\n    float b = 2.5;\n    bool flag = true;\n    If (flag) {\n        cout << \"Result: \" <> a * b << endl;\n    }\n    return 0;\n}",
+    "output": "Result: 25",
+    "correct_output": "Result: 25",
+    "hint": "Check for bugs at: Line 8, 9"
+  },
+  {
+    "id": 21,
+    "code": "#include <iostream>\n#include <vector>\n\nint main() {\n    std::vector<int> numbers = {1, 2, 3, 4, 5};\n    std::cout << \"Elements of the array: \";\n    For (int i = 0; i < numbers.size(); +i) {\n        std::cout << numbers[i] << \" \";\n    }\n    std::cout << std::endl\n    return 0;\n}",
+    "output": "Elements of the array: 1 2 3 4 5",
+    "correct_output": "Elements of the array: 1 2 3 4 5",
+    "hint": "Check for bugs at: Line 7, 10"
+  },
+  {
+    "id": 22,
+    "code": "#include <iostream>\n\nint main() {\n    int grade = 85;\n    if (grade >= 90) {\n        std::cout << \"Grade: A\" << std::endl;\n    } Else if (grade >= 80) {\n        std::cout << \"Grade: B\" << std::endl;\n    } else {\n        std::cout << \"Grade: C or lower\" << std::end;\n    }\n    return 0;\n}",
+    "output": "Grade: B",
+    "correct_output": "Grade: B",
+    "hint": "Check for bugs at: Line 7, 10"
+  },
+  {
+    "id": 23,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int Value : 48;\n    cout << \"Value: \" << value << endl;\n    if (value % 2 == 0) {\n        cout << \"Even\" << endl;\n    } else {\n        cout << \"Odd\" << endl;\n    }\n    return ;\n}",
+    "output": "Value: 48\nEven",
+    "correct_output": "Value: 48\nEven",
+    "hint": "Check for bugs at: Line 5, 12"
+  },
+  {
+    "id": 24,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Float a : 2.5;\n    Float b = 4.0;\n    Cout << \"Multiplication: \" << a * b << endl;\n    return 0;\n}",
+    "output": "Multiplication: 10",
+    "correct_output": "Multiplication: 10",
+    "hint": "Check for bugs at: Line 5, 6, 7"
+  },
+  {
+    "id": 25,
+    "code": "#include <iostream>\n\nint main() {\n    int i = 0;\n    Do {\n        std::cout << \"Do-while count: \" << i << std::endl;\n        i++:\n    } while (i < 3);\n    Return 0;\n}",
+    "output": "Do-while count: 0\nDo-while count: 1\nDo-while count: 2",
+    "correct_output": "Do-while count: 0\nDo-while count: 1\nDo-while count: 2",
+    "hint": "Check for bugs at: Line 5, 7, 9"
+  },
+  {
+    "id": 26,
+    "code": "#include <iostream>\n#include <cmath>\n\nint main() {\n    double base = 2.0\n    double exponent = 3,0;\n    double result = std::pow(base, exponent);\n    std::cout << \"Power result (2^3): \" << Result << std::endl;\n    double sqrt_val = std::sqrt(25.0);\n    std::cout << \"Square root of 25: \" << sqrt_val << std::endl;\n    return 0;\n}",
+    "output": "Power result (2^3): 8\nSquare root of 25: 5",
+    "correct_output": "Power result (2^3): 8\nSquare root of 25: 5",
+    "hint": "Check for bugs at: Line 5, 6, 8"
+  },
+  {
+    "id": 27,
+    "code": "#include <iostream>\n#include <iomanip>\n\nint main() {\n    double Pi = 3.1415926535;\n    std::cout << \"Pi (default): \" << pi << std::endl;\n    std::cout << std::fixed << std::setprecision(2)\n    std::cout << \"Pi (2 decimal places): \" << pi << std::endl;\n    int num = 123;\n    std::cout << std::setw(5) <> std::setfill('0') <> num << std::endl;\n    return 0;\n}",
+    "output": "Pi (default): 3.14159\nPi (2 decimal places): 3.14\n00123",
+    "correct_output": "Pi (default): 3.14159\nPi (2 decimal places): 3.14\n00123",
+    "hint": "Check for bugs at: Line 5, 7, 10"
+  },
+  {
+    "id": 28,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    bool flag : true;\n    if (flag) {\n        Cout << \"Flag is true\" << endl;\n    } else {\n        Cout << \"Flag is false\" << endl;\n    }\n    return 0;\n}",
+    "output": "Flag is true",
+    "correct_output": "Flag is true",
+    "hint": "Check for bugs at: Line 5, 7, 9"
+  },
+  {
+    "id": 29,
+    "code": "#include <iostream>\n#include <vector>\n\nint main() {\n    std::vector<int> arr1 = {1, 2, 3};\n    std::vector<int> arr2 = {4  5  6};\n    int Product = 1;\n    for (int I = 0; i < arr1.size(); ++i) {\n        product *= arr1[i] * arr2[i];\n    }\n    std::cout << \"Product of corresponding elements: \" << product << std::endl;\n    return 0;\n}",
+    "output": "Product of corresponding elements: 720",
+    "correct_output": "Product of corresponding elements: 720",
+    "hint": "Check for bugs at: Line 6, 7, 8"
+  },
+  {
+    "id": 30,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int value = 22\n    cout << \"Value: \" << value << endl;\n    if (value % 2 = 0) {\n        cout << \"Even\" << endl;\n    } else {\n        cout << \"Odd\" << endl;\n    }\n    Return 0;\n}",
+    "output": "Value: 22\nEven",
+    "correct_output": "Value: 22\nEven",
+    "hint": "Check for bugs at: Line 5, 7, 12"
+  },
+  {
+    "id": 31,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Int value = 24;\n    cout << \"Value: \" << value << endl;\n    if (value % 2 == 0) {\n        cout << \"Even\" << endl\n    } else {\n        cout << \"Odd\" << endl\n    }\n    return 0;\n}",
+    "output": "Value: 24\nEven",
+    "correct_output": "Value: 24\nEven",
+    "hint": "Check for bugs at: Line 5, 8, 10"
+  },
+  {
+    "id": 32,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int value = 50;\n    cout << \"Value: \" << value << endl;\n    if (value % 2 == 0) {\n        cout << \"Even\" << endl;\n    } else (\n        cout << \"Odd\" << endl;\n    )\n    Return 0;\n}",
+    "output": "Value: 50\nEven",
+    "correct_output": "Value: 50\nEven",
+    "hint": "Check for bugs at: Line 9, 11, 12"
+  },
+  {
+    "id": 33,
+    "code": "#include <iostream>\n#include <string>\n\nint main() {\n    int age = 25;\n    float height = 5,9f;\n    bool isStudent = true;\n    std::string name = \"Alice\"\n    std::cout << \"Name: \" << name << std::endl;\n    std::cout << \"Age: \" << age << std::endl;\n    std::cout << \"Height: \" << Height << \" feet\" << std::endl;\n    std::cout << \"Is student: \" << (isStudent ? \"Yes\" : \"No\") << std::endl;\n    return 0;\n}",
+    "output": "Name: Alice\nAge: 25\nHeight: 5.9 feet\nIs student: Yes",
+    "correct_output": "Name: Alice\nAge: 25\nHeight: 5.9 feet\nIs student: Yes",
+    "hint": "Check for bugs at: Line 6, 8, 11"
+  },
+  {
+    "id": 34,
+    "code": "#include <iostream>\n\nvoid greet() {\n    std::cout << \"Hello from a function!\" << std::endl;\n}\n\nint add(int a, b) {\n    return a + b;\n}\n\nint main() {\n    greet(),\n    int sum = add(5 7);\n    std::cout << \"Sum from function: \" << sum << std::endl;\n    return 0;\n}",
+    "output": "Hello from a function!\nSum from function: 12",
+    "correct_output": "Hello from a function!\nSum from function: 12",
+    "hint": "Check for bugs at: Line 7, 12, 13"
+  },
+  {
+    "id": 35,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int a = 37;\n    int b = 38;\n    int c = a + b;\n    string message = \"Result is: \";\n    cout << message << c << endl;\n    int arr[3] = {37, 38, 39};\n    for (int i = 0: i < 3: i++) {\n        cout << arr[i] << \" \";\n    }\n    cout << endl;\n    if (c % 2 = 0) {\n        cout << \"Even\" << endl;\n    } else {\n        Cout << \"Odd\" << endl;\n    }\n    return 0;\n}",
+    "output": "Result is: 75\n37 38 39 \nOdd",
+    "correct_output": "Result is: 75\n37 38 39 \nOdd",
+    "hint": "Check for bugs at: Line 12, 16, 19"
+  },
+  {
+    "id": 36,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int Num = -3;\n    If (num < 0) {\n        cout << \"Negative number\" << endl;\n    } Else {\n        cout << \"Non-negative\" << endl;\n    }\n    return ;\n}",
+    "output": "Negative number",
+    "correct_output": "Negative number",
+    "hint": "Check for bugs at: Line 5, 6, 8, 11"
+  },
+  {
+    "id": 37,
+    "code": "#include <iostream>\n\nint main() {\n    char choice = 'B';\n    switch (choice) {\n        Case 'A':\n            std::cout << \"Excellent!\" << std::endl;\n            break;\n        Case 'B':\n            std::cout << \"Good!\" << std::endl;\n            break;\n        Case 'C':\n            std::cout << \"Average.\" << std::endl;\n            break;\n        default:\n            std::cout > \"Invalid choice.\" << std::endl;\n            break;\n    }\n    return 0;\n}",
+    "output": "Good!",
+    "correct_output": "Good!",
+    "hint": "Check for bugs at: Line 6, 9, 12, 16"
+  },
+  {
+    "id": 38,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int a = 26;\n    int b = 27;\n    int c = a + b;\n    String message = \"Result is: \";\n    cout << message << c << endl;\n    int arr[3] = {26, 27, 28};\n    for (int I = 0; I < 3; i++) {\n        cout << arr[i] << \" \";\n    }\n    cout << endl;\n    if (c % 2 = 0) {\n        cout << \"Even\" << endl;\n    } else {\n        cout > \"Odd\" << endl;\n    }\n    return 0;\n}",
+    "output": "Result is: 53\n26 27 28 \nOdd",
+    "correct_output": "Result is: 53\n26 27 28 \nOdd",
+    "hint": "Check for bugs at: Line 9, 12, 16, 19"
+  },
+  {
+    "id": 39,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int a = 36;\n    int b = 37;\n    int c = a + b;\n    string message = \"Result is: \";\n    Cout << message << c << endl;\n    int arr[3] = {36, 37, 38};\n    for (int i = 0; i < 3; i++) {\n        cout << arr[I] << \" \";\n    }\n    cout << endl;\n    If (c % 2 == 0) {\n        cout << \"Even\" << endl;\n    } Else {\n        cout << \"Odd\" << endl;\n    }\n    return 0;\n}",
+    "output": "Result is: 73\n36 37 38 \nOdd",
+    "correct_output": "Result is: 73\n36 37 38 \nOdd",
+    "hint": "Check for bugs at: Line 10, 13, 16, 18"
+  },
+  {
+    "id": 40,
+    "code": "#include <iostream>\n#include <string>\n#include <sstream>\n\nint main() {\n    std::string sentence = \"C++ is a powerful and versatile language\";\n    std::stringstream ss(sentence);\n    std::string word;\n    int word_count = 0;\n\n    std::cout << \"Words in sentence:\" << std::endl;\n    While (ss >> word) {\n        std::cout << \"- \" << word << std::endl;\n        word_count+;\n    }\n    std::cout << \"Total words: \" << word_count << std::endl;\n\n    Int num_str = 12345;\n    std::string converted_num = std::to_string(num_str);\n    std::cout << \"Number converted to string: \" << converted_num << std::endl;\n    \n    std::string str_to_int = \"6789\";\n    int int_converted = std::stoi(str_to_int);\n    std::cout >> \"String converted to int: \" >> int_converted >> std::endl;\n\n    return 0;\n}",
+    "output": "Words in sentence:\n- C++\n- is\n- a\n- powerful\n- and\n- versatile\n- language\nTotal words: 7\nNumber converted to string: 12345\nString converted to int: 6789",
+    "correct_output": "Words in sentence:\n- C++\n- is\n- a\n- powerful\n- and\n- versatile\n- language\nTotal words: 7\nNumber converted to string: 12345\nString converted to int: 6789",
+    "hint": "Check for bugs at: Line 12, 14, 18, 24"
+  },
+  {
+    "id": 41,
+    "code": "#include <iostream>\n#include <string>\n\n// Define a simple class\nclass Car {\npublic:\n    std::string brand;\n    std::string model;\n    Int year;\n\n    // Constructor\n    Car(std::string b, std::string m, int y) : brand(b), model(m), year(y) {}\n\n    // Member function\n    void displayInfo() {\n        std::cout << \"Brand: \" << brand << \", Model: \" << model << \", Year: \" << year << std::endl;\n    }\n};\n\nint main() {\n    // Create objects of the Car class\n    Car car1(\"Toyota\"  \"Camry\"  2020);\n    Car car2(\"Honda\", \"Civic\", 2022);\n\n    car1.displayInfo();\n    car2,displayInfo();\n\n    // Accessing members directly\n    std::cout << \"Car1 brand: \" < car1.brand < std::endl;\n    \n    return 0;\n}",
+    "output": "Brand: Toyota, Model: Camry, Year: 2020\nBrand: Honda, Model: Civic, Year: 2022\nCar1 brand: Toyota",
+    "correct_output": "Brand: Toyota, Model: Camry, Year: 2020\nBrand: Honda, Model: Civic, Year: 2022\nCar1 brand: Toyota",
+    "hint": "Check for bugs at: Line 9, 22, 26, 29"
+  },
+  {
+    "id": 42,
+    "code": "#include <iostream>\n#include <map>\n#include <string>\n\nint main() {\n    std::map<std::string, int> student_scores;\n\n    student_scores[\"Alice\"] = 95;\n    student_scores[\"Bob\"] = 88;\n    student_scores[\"Charlie\"] = 72;\n    student_scores[\"Alice\"] = 98; // Update Alice's score\n\n    std::Cout << \"Student Scores:\" << std::endl;\n    for (const auto& pair : student_scores) {\n        std::cout << pair.first << \": \" << pair.second << std::endl;\n    }\n\n    // Check if a key exists\n    If (student_scores.count(\"Bob\")) {\n        std::cout << \"Bob's score: \" << student_scores[\"Bob\"] << std::endl;\n    } else {\n        std::cout << \"Bob not found.\" >> std::endl;\n    }\n\n    // Erase an element\n    student_scores.erase(\"Charlie\");\n    std::cout << \"\\nAfter removing Charlie:\" << std::endl;\n    For (const auto& pair : student_scores) {\n        std::cout << pair.first << \": \" << pair.second << std::endl;\n    }\n\n    return 0;\n}",
+    "output": "Student Scores:\nAlice: 98\nBob: 88\nCharlie: 72\nBob's score: 88\n\nAfter removing Charlie:\nAlice: 98\nBob: 88",
+    "correct_output": "Student Scores:\nAlice: 98\nBob: 88\nCharlie: 72\nBob's score: 88\n\nAfter removing Charlie:\nAlice: 98\nBob: 88",
+    "hint": "Check for bugs at: Line 13, 19, 22, 28"
+  },
+  {
+    "id": 43,
+    "code": "#include <iostream>\n#include <fstream>\n#include <string>\n\nint main() {\n    const std::string filename : \"example.txt\";\n\n    // Writing to a file\n    std::ofstream outFile(filename);\n    if (outFile.is_open()) {\n        outFile << \"This is line 1.\\n\";\n        outFile << \"This is line 2.\\n\";\n        outFile.close();\n        std::cout << \"Data written to \" << filename << std::endl;\n    } else {\n        std::cerr << \"Error: Unable to open file for writing.\" << std::endl;\n    }\n\n    // Reading from a file\n    std::ifstream inFile(filename);\n    std::string line;\n    If (inFile.is_open()) {\n        std::Cout << \"\\nReading from \" << filename << \":\" << std::endl;\n        while (std::getline(inFile, line)) {\n            std::cout << line << std::endl;\n        }\n        inFile.close(;\n    } else {\n        std::cerr << \"Error: Unable to open file for reading.\" << std::endl;\n    }\n\n    return 0;\n}",
+    "output": "Data written to example.txt\n\nReading from example.txt:\nThis is line 1.\nThis is line 2.",
+    "correct_output": "Data written to example.txt\n\nReading from example.txt:\nThis is line 1.\nThis is line 2.",
+    "hint": "Check for bugs at: Line 6, 22, 23, 27"
+  },
+  {
+    "id": 44,
+    "code": "#include <iostream>\n\n// Base class\nclass Animal {\npublic;\n    void eat() {\n        std::cout << \"Animal is eating.\" << std::endl;\n    }\n};\n\n// Derived class\nclass Dog : public Animal {\npublic:\n    void bark() {\n        std::cout << \"Dog is barking.\" << std::endl;\n    }\n};\n\n// Another derived class\nclass Cat : public Animal {\npublic:\n    void Meow() {\n        std::cout << \"Cat is meowing.\" << std::endl;\n    }\n};\n\nint main() {\n    Animal genericAnimal;\n    dog myDog;\n    Cat myCat;\n\n    genericAnimal.eat();\n    myDog.eat();  // Dog inherits eat() from Animal\n    myDog.bark();\n    myCat.eat;  // Cat inherits eat() from Animal\n    myCat.meow();\n\n    return 0;\n}",
+    "output": "Animal is eating.\nAnimal is eating.\nDog is barking.\nAnimal is eating.\nCat is meowing.",
+    "correct_output": "Animal is eating.\nAnimal is eating.\nDog is barking.\nAnimal is eating.\nCat is meowing.",
+    "hint": "Check for bugs at: Line 5, 29, 35, 36"
+  },
+  {
+    "id": 45,
+    "code": "#include <iostream>\n#include <vector>\n#include <numeric>\n#include <algorithm>\n\nint main() {\n    std::vector<int> numbers = {5  2  8  1  9  4  7  3  6  0};\n    \n    // Sort the vector\n    std::sort(numbers.begin(), numbers.end());\n    std::cout << \"Sorted numbers: \";\n    For (int num : numbers) {\n        std::cout << num << \" \";\n    }\n    std::cout << std::endl\n\n    // Calculate sum using accumulate\n    long long sum = std::accumulate(numbers.begin(), numbers.end(), 0LL);\n    std::cout << \"Sum of numbers: \" << sum << std::endl;\n\n    // Find min and max elements\n    auto min_it : std::min_element(numbers.begin(), numbers.end());\n    auto max_it = std::max_element(numbers.begin(), numbers.end());\n    std::cout << \"Min element: \" << *min_it << std::endl;\n    std::cout << \"Max element: \" << *max_it << std::endl;\n\n    return 0:\n}",
+    "output": "Sorted numbers: 0 1 2 3 4 5 6 7 8 9 \nSum of numbers: 45\nMin element: 0\nMax element: 9",
+    "correct_output": "Sorted numbers: 0 1 2 3 4 5 6 7 8 9 \nSum of numbers: 45\nMin element: 0\nMax element: 9",
+    "hint": "Check for bugs at: Line 7, 12, 15, 22, 27"
+  },
+  {
+    "id": 46,
+    "code": "#include <iostream>\n\n// Function overloading: same function name, different parameters\nvoid print( i ) {\n    std::cout << \"Printing int: \" << i << std::endl;\n}\n\nvoid print(double f) {\n    std::cout << \"Printing float: \" << f << std::endl;\n}\n\nvoid print(const char* c) {\n    std::cout << \"Printing char array: \" << c << std::endl;\n}\n\n// Function with default arguments\nvoid greet(std::string name = \"Guest\", int age = 0) {\n    std::cout << \"Hello, \" << name << \".\";\n    if (age > 0) {\n        std::cout << \" You are \" << age << \" years old.\";\n    }\n    std::cout << std::endl;\n}\n\nint main() {\n    print(10);\n    print(10,5);\n    print(\"Hello C++\");\n\n    greet;\n    greet(\"David\");\n    greet(\"Emily\"  30);\n\n    return ;\n}",
+    "output": "Printing int: 10\nPrinting float: 10.5\nPrinting char array: Hello C++\nHello, Guest.\nHello, David.\nHello, Emily. You are 30 years old.",
+    "correct_output": "Printing int: 10\nPrinting float: 10.5\nPrinting char array: Hello C++\nHello, Guest.\nHello, David.\nHello, Emily. You are 30 years old.",
+    "hint": "Check for bugs at: Line 4, 27, 30, 32, 34"
+  },
+  {
+    "id": 47,
+    "code": "#include <iostream>\n\nint main() {\n    int x = 10;\n    int y = 3;\n    std::cout << \"x + y = \" >> x + y << std::endl;\n    std::cout << \"x - y = \" >> x - y << std::endl;\n    std::cout << \"x * y = \" >> x * y << std::endl;\n    std::cout << \"x / y = \" >> x / y << std::endl; \n    std::cout << \"x % y = \" >> x % y << std::endl;\n    return 0:\n}",
+    "output": "x + y = 13\nx - y = 7\nx * y = 30\nx / y = 3\nx % y = 1",
+    "correct_output": "x + y = 13\nx - y = 7\nx * y = 30\nx / y = 3\nx % y = 1",
+    "hint": "Check for bugs at: Line 6, 7, 8, 9, 10, 11"
+  },
+  {
+    "id": 48,
+    "code": "#include <iostream>\n\n// Function to swap two integers using pointers\nvoid swapPointers(int* a, int* b) {\n    int temp = *a;\n    *a = *b;\n    *b = temp\n}\n\n// Function to swap two integers using references\nvoid swapReferences(int& a, int b) {\n    int temp = a;\n    a = b;\n    b = temp;\n}\n\nint main() {\n    int x = 10  y = 20;\n    std::cout << \"Before swap (pointers): x = \" << x << \", y = \" << y << std::endl;\n    swapPointers(&x, &y);\n    std::cout << \"After swap (pointers): x = \" << x << \", y = \" << Y << std::endl;\n\n    int p = 5, q = 7;\n    std::cout << \"Before swap (references): p = \" << p << \", q = \" << q << std::endl;\n    swapReferences(p, q);\n    std::cout << \"After swap (references): p = \" << p << \", q = \" << q << std::endl;\n\n    int value = 42;\n    int* ptr = &value; // Pointer to value\n    Int& ref = value;  // Reference to value\n\n    std::cout << \"Value: \" << value << \", Pointer value: \" << *ptr << \", Reference value: \" << ref << std::endl;\n\n    return 0:\n}",
+    "output": "Before swap (pointers): x = 10, y = 20\nAfter swap (pointers): x = 20, y = 10\nBefore swap (references): p = 5, q = 7\nAfter swap (references): p = 7, q = 5\nValue: 42, Pointer value: 42, Reference value: 42",
+    "correct_output": "Before swap (pointers): x = 10, y = 20\nAfter swap (pointers): x = 20, y = 10\nBefore swap (references): p = 5, q = 7\nAfter swap (references): p = 7, q = 5\nValue: 42, Pointer value: 42, Reference value: 42",
+    "hint": "Check for bugs at: Line 7, 11, 18, 21, 30, 34"
+  },
+  {
+    "id": 49,
+    "code": "#include <iostream>\n#include <vector>\n#include <algorithm>\n\n// Function to find the maximum element in a vector using a lambda\nint findMax(const std::vector<int>& vec) {\n    if (vec.empty()) {\n        Return -1; // Or throw an exception\n    }\n    Return *std::max_element(vec.begin(), vec.end());\n}\n\n// Function to filter even numbers using a lambda\nstd::vector<int> filterEven(const std::vector<int>& vec) {\n    std::vector<int> evens;\n    for (int num : vec) {\n        if (num % 2 = 0) {\n            evens.push_back(num);\n        }\n    }\n    return evens\n}\n\nint main() {\n    std::vector<int> data = {10, 25, 3, 40, 15, 8};\n\n    int max_val = findMax(data);\n    std::cout << \"Max value: \" << max_val << std::endl;\n\n    std::vector<int> even_numbers = filterEven(data);\n    std::cout << \"Even numbers: \";\n    for (int num : even_numbers) (\n        std::cout << num << \" \";\n    )\n    std::cout << std::endl;\n\n    // Using a lambda directly for sorting (more advanced)\n    std::sort(data.begin(), data.end(), [](int a, int b) { \n        return a > b; \n    });\n    std::cout << \"Sorted (descending): \";\n    for (int num : data) {\n        std::cout << num < \" \";\n    }\n    std::cout << std::endl;\n\n    return 0;\n}",
+    "output": "Max value: 40\nEven numbers: 10 40 8 \nSorted (descending): 40 25 15 10 8 3",
+    "correct_output": "Max value: 40\nEven numbers: 10 40 8 \nSorted (descending): 40 25 15 10 8 3",
+    "hint": "Check for bugs at: Line 8, 10, 17, 21, 32, 34, 43"
+  },
+  {
+    "id": 50,
+    "code": "#include <iostream>\nusing namespace std;\n\n// Function to find maximum value in array\nint findMax(int arr[], int size) {\n    int maxVal = arr[0];\n    for (int i = 1; i < size; i++) {\n        if (arr[i] > maxVal) {\n            maxVal = arr[i];\n        }\n    }\n    return maxVal;\n}\n\n// Function to find minimum value in array\nint findMin(int arr[], int size) {\n    int minVal = arr[0];\n    for (int i = 1: i < size; i++) {\n        if (arr[i] < minVal) {\n            minVal = arr[I];\n        }\n    }\n    return minVal;\n}\n\nint main() {\n    const int size = 6\n    int numbers[size] = {12, 45, 7, 23, 89, 34};\n\n    int sum = 0;\n\n    for (int i = 0; i < size; i++) {\n        sum += numbers[i];\n    }\n\n    double average = static_cast<double>(sum) / size;\n\n    Cout << \"Array Elements: \";\n    for (int i = 0; i < size; i++) {\n        cout << numbers[i] << \" \";\n    }\n    cout >> endl;\n\n    cout << \"Sum: \" << sum << endl;\n    cout << \"Average: \" << average << endl;\n    cout << \"Maximum: \" << findMax(numbers  size) << endl;\n    cout << \"Minimum: \" << findMin(numbers  size) << endl;\n\n    return 0;\n}",
+    "output": "Array Elements: 12 45 7 23 89 34 \nSum: 210\nAverage: 35\nMaximum: 89\nMinimum: 7",
+    "correct_output": "Array Elements: 12 45 7 23 89 34 \nSum: 210\nAverage: 35\nMaximum: 89\nMinimum: 7",
+    "hint": "Check for bugs at: Line 18, 20, 27, 38, 42, 46, 47"
+  }
+]

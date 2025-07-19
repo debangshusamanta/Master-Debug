@@ -1,0 +1,40 @@
+# Sensitive environment variables
+.env
+.env.*  # Includes .env.local, .env.production, etc.
+
+# Node modules (already included, keep it)
+node_modules/
+
+# Build output (Vite output goes to dist/)
+dist/
+dist-ssr/
+
+# Local dev files
+*.local
+
+# Vite cache
+.vite/
+.cache/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor/IDE files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Optional: Mac OS junk files
+Thumbs.db

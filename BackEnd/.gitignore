@@ -1,0 +1,17 @@
+# Ignore node modules
+node_modules/
+
+# Ignore env file with secrets
+.env
+
+# Ignore temp folder (used during execution)
+temp/
+
+# Ignore logs and debug files
+logs/
+*.log
+npm-debug.log*
+
+#  Ignore build output (if you ever build or compile)
+dist/
+build/

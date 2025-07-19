@@ -1,0 +1,303 @@
+[
+  {
+    "id": 1,
+    "code": "let a = 10;\nlet b = 5;\nlet sum = a + b;\nconsole.log(\"Sum:\", sum);",
+    "output": "Sum: 15\n",
+    "correct_output": "Sum: 15\n"
+  },
+  {
+    "id": 2,
+    "code": "let n = 7;\nlet fact = 1;\nfor (let i = 1; i <= n; i++) {\n  fact *= i;\n}\nconsole.log(\"Factorial:\", fact);",
+    "output": "Factorial: 5040\n",
+    "correct_output": "Factorial: 5040\n"
+  },
+  {
+    "id": 3,
+    "code": "let num = 4;\nif (num % 2 === 0) {\n  console.log(num, \"is Even\");\n} else {\n  console.log(num, \"is Odd\");\n}",
+    "output": "4 is Even\n",
+    "correct_output": "4 is Even\n"
+  },
+  {
+    "id": 4,
+    "code": "let arr = [2, 4, 6, 8];\nlet sum = 0;\nfor (let i = 0; i < arr.length; i++) {\n  sum += arr[i];\n}\nconsole.log(\"Array Sum:\", sum);",
+    "output": "Array Sum: 20\n",
+    "correct_output": "Array Sum: 20\n"
+  },
+  {
+    "id": 5,
+    "code": "function isPrime(n) {\n  if (n <= 1) return false;\n  for (let i = 2; i <= Math.sqrt(n); i++) {\n    if (n % i === 0) return false;\n  }\n  return true;\n}\nconsole.log(\"7 is Prime:\", isPrime(7));",
+    "output": "7 is Prime: true\n",
+    "correct_output": "7 is Prime: true\n"
+  },
+  {
+    "id": 6,
+    "code": "let str = \"hello\";\nlet reversed = \"\";\nfor (let i = str.length - 1; i >= 0; i--) {\n  reversed += str[i];\n}\nconsole.log(\"Reversed:\", reversed);",
+    "output": "Reversed: olleh\n",
+    "correct_output": "Reversed: olleh\n"
+  },
+  {
+    "id": 7,
+    "code": "let x = 10;\nswitch (x % 3) {\n  case 0:\n    console.log(\"Divisible by 3\");\n    break;\n  case 1:\n    console.log(\"Remainder 1\");\n    break;\n  default:\n    console.log(\"Remainder 2\");\n}",
+    "output": "Remainder 1\n",
+    "correct_output": "Remainder 1\n"
+  },
+  {
+    "id": 8,
+    "code": "let sum = 0;\nfor (let i = 1; i <= 10; i++) {\n  if (i % 2 !== 0) {\n    sum += i;\n  }\n}\nconsole.log(\"Odd Sum:\", sum);",
+    "output": "Odd Sum: 25\n",
+    "correct_output": "Odd Sum: 25\n"
+  },
+  {
+    "id": 9,
+    "code": "function findMax(arr) {\n  let max = arr[0];\n  for (let i = 1; i < arr.length; i++) {\n    if (arr[i] > max) {\n      max = arr[i];\n    }\n  }\n  return max;\n}\nconsole.log(\"Max:\", findMax([3, 7, 2, 9, 5]));",
+    "output": "Max: 9\n",
+    "correct_output": "Max: 9\n"
+  },
+  {
+    "id": 10,
+    "code": "let count = 0;\nlet arr = [1, 2, 3, 4, 5, 6];\nfor (let i = 0; i < arr.length; i++) {\n  if (arr[i] % 2 === 0) count++;\n}\nconsole.log(\"Even count:\", count);",
+    "output": "Even count: 3\n",
+    "correct_output": "Even count: 3\n"
+  },
+  {
+    "id": 11,
+    "code": "function multiplyArray(arr) {\n  let result = 1;\n  for (let num of arr) {\n    result *= num;\n  }\n  return result;\n}\nconsole.log(\"Product:\", multiplyArray([1, 2, 3, 4]));",
+    "output": "Product: 24\n",
+    "correct_output": "Product: 24\n"
+  },
+  {
+    "id": 12,
+    "code": "let arr = [10, 15, 20, 25, 30];\nlet filtered = [];\nfor (let num of arr) {\n  if (num % 10 === 0) {\n    filtered.push(num);\n  }\n}\nconsole.log(\"Filtered:\", filtered);",
+    "output": "Filtered: [10, 20, 30]\n",
+    "correct_output": "Filtered: [10, 20, 30]\n"
+  },
+  {
+    "id": 13,
+    "code": "function squareArray(arr) {\n  let result = [];\n  for (let i = 0; i < arr.length; i++) {\n    result.push(arr[i] * arr[i]);\n  }\n  return result;\n}\nconsole.log(\"Squares:\", squareArray([2, 3, 4]));",
+    "output": "Squares: [4, 9, 16]\n",
+    "correct_output": "Squares: [4, 9, 16]\n"
+  },
+  {
+    "id": 14,
+    "code": "let arr = [3, 6, 9, 12, 15];\nlet sum = 0;\nfor (let i = 0; i < arr.length; i++) {\n  if (arr[i] % 2 !== 0) {\n    sum += arr[i];\n  }\n}\nconsole.log(\"Odd Sum:\", sum);",
+    "output": "Odd Sum: 18\n",
+    "correct_output": "Odd Sum: 18\n"
+  },
+  {
+    "id": 15,
+    "code": "function reverseArray(arr) {\n  let reversed = [];\n  for (let i = arr.length - 1; i >= 0; i--) {\n    reversed.push(arr[i]);\n  }\n  return reversed;\n}\nconsole.log(\"Reversed:\", reverseArray([1, 2, 3]));",
+    "output": "Reversed: [3, 2, 1]\n",
+    "correct_output": "Reversed: [3, 2, 1]\n"
+  },
+  {
+    "id": 16,
+    "code": "let str = \"OpenAI\";\nlet vowels = \"aeiouAEIOU\";\nlet count = 0;\nfor (let i = 0; i < str.length; i++) {\n  if (vowels.includes(str[i])) {\n    count++;\n  }\n}\nconsole.log(\"Vowel count:\", count);",
+    "output": "Vowel count: 3\n",
+    "correct_output": "Vowel count: 3\n"
+  },
+  {
+    "id": 17,
+    "code": "function checkArray(arr) {\n  let even = 0, odd = 0;\n  for (let num of arr) {\n    if (num % 2 === 0) even++;\n    else odd++;\n  }\n  return even > odd ? \"More Evens\" : \"More Odds\";\n}\nconsole.log(checkArray([1, 3, 5, 2, 4]));",
+    "output": "More Odds\n",
+    "correct_output": "More Odds\n"
+  },
+  {
+    "id": 18,
+    "code": "let arr = [5, 10, 15, 20];\nlet avg = 0;\nlet sum = 0;\nfor (let num of arr) {\n  sum += num;\n}\navg = sum / arr.length;\nconsole.log(\"Average:\", avg);",
+    "output": "Average: 12.5\n",
+    "correct_output": "Average: 12.5\n"
+  },
+  {
+    "id": 19,
+    "code": "function getPositives(arr) {\n  let result = [];\n  for (let i = 0; i < arr.length; i++) {\n    if (arr[i] > 0) result.push(arr[i]);\n  }\n  return result;\n}\nconsole.log(\"Positives:\", getPositives([-3, 4, -1, 7]));",
+    "output": "Positives: [4, 7]\n",
+    "correct_output": "Positives: [4, 7]\n"
+  },
+  {
+    "id": 20,
+    "code": "let arr = [2, 3, 5, 7, 11];\nlet product = 1;\nfor (let num of arr) {\n  if (num % 2 !== 0) {\n    product *= num;\n  }\n}\nconsole.log(\"Odd Product:\", product);",
+    "output": "Odd Product: 1155\n",
+    "correct_output": "Odd Product: 1155\n"
+  },
+  {
+    "id": 21,
+    "code": "function analyzeNumbers(arr) {\n  let sum = 0;\n  let evenCount = 0;\n  let oddCount = 0;\n  let max = arr[0];\n  let min = arr[0];\n  for (let i = 0; i < arr.length; i++) {\n    sum += arr[i];\n    if (arr[i] % 2 === 0) evenCount++;\n    else oddCount++;\n    if (arr[i] > max) max = arr[i];\n    if (arr[i] < min) min = arr[i];\n  }\n  let avg = sum / arr.length;\n  console.log(\"Total Sum:\", sum);\n  console.log(\"Average:\", avg);\n  console.log(\"Even Count:\", evenCount);\n  console.log(\"Odd Count:\", oddCount);\n  console.log(\"Max:\", max);\n  console.log(\"Min:\", min);\n}\nlet data = [10, 5, 8, 20, 3, 12, 7];\nanalyzeNumbers(data);",
+    "output": "Total Sum: 65\nAverage: 9.285714285714286\nEven Count: 4\nOdd Count: 3\nMax: 20\nMin: 3\n",
+    "correct_output": "Total Sum: 65\nAverage: 9.285714285714286\nEven Count: 4\nOdd Count: 3\nMax: 20\nMin: 3\n"
+  },
+  {
+    "id": 22,
+    "code": "function countDivisibles(arr, divisor) {\n  let count = 0;\n  let divisibleNumbers = [];\n  for (let i = 0; i < arr.length; i++) {\n    if (arr[i] % divisor === 0) {\n      count++;\n      divisibleNumbers.push(arr[i]);\n    }\n  }\n  console.log(\"Divisible by\", divisor, \":\", count);\n  console.log(\"Numbers:\", divisibleNumbers);\n}\nlet values = [];\nfor (let i = 1; i <= 50; i++) {\n  values.push(i);\n}\ncountDivisibles(values, 7);",
+    "output": "Divisible by 7 : 7\nNumbers: [7, 14, 21, 28, 35, 42, 49]\n",
+    "correct_output": "Divisible by 7 : 7\nNumbers: [7, 14, 21, 28, 35, 42, 49]\n"
+  },
+  {
+    "id": 23,
+    "code": "function letterFrequency(str) {\n  let freq = {};\n  for (let i = 0; i < str.length; i++) {\n    let char = str[i].toLowerCase();\n    if (char >= 'a' && char <= 'z') {\n      if (freq[char]) {\n        freq[char]++;\n      } else {\n        freq[char] = 1;\n      }\n    }\n  }\n  let keys = Object.keys(freq).sort();\n  for (let k of keys) {\n    console.log(k + \": \" + freq[k]);\n  }\n}\nletterFrequency(\"Programming in JavaScript is fun\");",
+    "output": "a: 2\ni: 4\nc: 1\ng: 2\nf: 1\nj: 1\nm: 2\nn: 3\np: 1\nr: 2\ns: 3\nt: 1\nu: 1\nv: 1\no: 1\n",
+    "correct_output": "a: 2\ni: 4\nc: 1\ng: 2\nf: 1\nj: 1\nm: 2\nn: 3\np: 1\nr: 2\ns: 3\nt: 1\nu: 1\nv: 1\no: 1\n"
+  },
+  {
+    "id": 24,
+    "code": "function groupByParity(arr) {\n  let even = [];\n  let odd = [];\n  for (let i = 0; i < arr.length; i++) {\n    if (arr[i] % 2 === 0) {\n      even.push(arr[i]);\n    } else {\n      odd.push(arr[i]);\n    }\n  }\n  even.sort((a, b) => a - b);\n  odd.sort((a, b) => b - a);\n  console.log(\"Even Asc:\", even);\n  console.log(\"Odd Desc:\", odd);\n}\nlet list = [11, 2, 4, 5, 9, 14, 17, 22];\ngroupByParity(list);",
+    "output": "Even Asc: [2, 4, 14, 22]\nOdd Desc: [17, 11, 9, 5]\n",
+    "correct_output": "Even Asc: [2, 4, 14, 22]\nOdd Desc: [17, 11, 9, 5]\n"
+  },
+  {
+    "id": 25,
+    "code": "function charCategories(str) {\n  let vowels = 0;\n  let consonants = 0;\n  let digits = 0;\n  let others = 0;\n  let vSet = \"aeiouAEIOU\";\n  for (let i = 0; i < str.length; i++) {\n    let ch = str[i];\n    if (/[0-9]/.test(ch)) digits++;\n    else if (/[a-zA-Z]/.test(ch)) {\n      if (vSet.includes(ch)) vowels++;\n      else consonants++;\n    } else {\n      others++;\n    }\n  }\n  console.log(\"Vowels:\", vowels);\n  console.log(\"Consonants:\", consonants);\n  console.log(\"Digits:\", digits);\n  console.log(\"Others:\", others);\n}\ncharCategories(\"Hello World! 2024\");",
+    "output": "Vowels: 3\nConsonants: 7\nDigits: 4\nOthers: 3\n",
+    "correct_output": "Vowels: 3\nConsonants: 7\nDigits: 4\nOthers: 3\n"
+  },
+  {
+    "id": 26,
+    "code": "function matrixDiagonalSum(matrix) {\n  let n = matrix.length;\n  let sum = 0;\n  for (let i = 0; i < n; i++) {\n    sum += matrix[i][i];\n  }\n  console.log(\"Diagonal Sum:\", sum);\n}\nlet matrix = [\n  [1, 2, 3],\n  [4, 5, 6],\n  [7, 8, 9]\n];\nmatrixDiagonalSum(matrix);",
+    "output": "Diagonal Sum: 15\n",
+    "correct_output": "Diagonal Sum: 15\n"
+  },
+  {
+    "id": 27,
+    "code": "function rotateLeft(arr, d) {\n  let n = arr.length;\n  d = d % n;\n  let rotated = [];\n  for (let i = d; i < n; i++) rotated.push(arr[i]);\n  for (let i = 0; i < d; i++) rotated.push(arr[i]);\n  return rotated;\n}\nlet original = [1, 2, 3, 4, 5, 6];\nlet rotated = rotateLeft(original, 2);\nconsole.log(\"Rotated Array:\", rotated);",
+    "output": "Rotated Array: [3, 4, 5, 6, 1, 2]\n",
+    "correct_output": "Rotated Array: [3, 4, 5, 6, 1, 2]\n"
+  },
+  {
+    "id": 28,
+    "code": "function secondLargest(arr) {\n  let first = -Infinity;\n  let second = -Infinity;\n  for (let i = 0; i < arr.length; i++) {\n    if (arr[i] > first) {\n      second = first;\n      first = arr[i];\n    } else if (arr[i] > second && arr[i] !== first) {\n      second = arr[i];\n    }\n  }\n  console.log(\"Second Largest:\", second);\n}\nsecondLargest([10, 5, 20, 8, 15]);",
+    "output": "Second Largest: 15\n",
+    "correct_output": "Second Largest: 15\n"
+  },
+  {
+    "id": 29,
+    "code": "function sumPairs(arr, target) {\n  let pairs = [];\n  for (let i = 0; i < arr.length; i++) {\n    for (let j = i + 1; j < arr.length; j++) {\n      if (arr[i] + arr[j] === target) {\n        pairs.push([arr[i], arr[j]]);\n      }\n    }\n  }\n  console.log(\"Pairs with sum\", target, \":\", pairs);\n}\nsumPairs([1, 3, 2, 4, 5, 6], 7);",
+    "output": "Pairs with sum 7 : [[1,6],[3,4],[2,5]]\n",
+    "correct_output": "Pairs with sum 7 : [[1,6],[3,4],[2,5]]\n"
+  },
+  {
+    "id": 30,
+    "code": "function countUnique(arr) {\n  let counts = {};\n  for (let i = 0; i < arr.length; i++) {\n    counts[arr[i]] = (counts[arr[i]] || 0) + 1;\n  }\n  let unique = [];\n  for (let key in counts) {\n    if (counts[key] === 1) {\n      unique.push(Number(key));\n    }\n  }\n  console.log(\"Unique Elements:\", unique);\n}\ncountUnique([1, 2, 2, 3, 4, 4, 5]);",
+    "output": "Unique Elements: [1, 3, 5]\n",
+    "correct_output": "Unique Elements: [1, 3, 5]\n"
+  },
+  {
+    "id": 31,
+    "code": "function findModes(arr) {\n  let freq = {};\n  for (let i = 0; i < arr.length; i++) {\n    let num = arr[i];\n    if (freq[num]) freq[num]++;\n    else freq[num] = 1;\n  }\n\n  let maxFreq = 0;\n  for (let key in freq) {\n    if (freq[key] > maxFreq) {\n      maxFreq = freq[key];\n    }\n  }\n\n  let modes = [];\n  for (let key in freq) {\n    if (freq[key] === maxFreq) {\n      modes.push(Number(key));\n    }\n  }\n  console.log(\"Modes:\", modes);\n}\n\nfindModes([1, 2, 2, 3, 3, 4, 4, 4, 5]);",
+    "output": "Modes: [4]\n",
+    "correct_output": "Modes: [4]\n"
+  },
+  {
+    "id": 32,
+    "code": "function categorizeNumbers(arr) {\n  let even = [];\n  let odd = [];\n  let positive = [];\n  let negative = [];\n\n  for (let i = 0; i < arr.length; i++) {\n    let val = arr[i];\n    if (val >= 0) positive.push(val);\n    else negative.push(val);\n\n    if (val % 2 === 0) even.push(val);\n    else odd.push(val);\n  }\n\n  console.log(\"Even:\", even);\n  console.log(\"Odd:\", odd);\n  console.log(\"Positive:\", positive);\n  console.log(\"Negative:\", negative);\n}\n\ncategorizeNumbers([2, -3, 5, 6, -1, 0, 7]);",
+    "output": "Even: [2, 6, 0]\nOdd: [-3, 5, -1, 7]\nPositive: [2, 5, 6, 0, 7]\nNegative: [-3, -1]\n",
+    "correct_output": "Even: [2, 6, 0]\nOdd: [-3, 5, -1, 7]\nPositive: [2, 5, 6, 0, 7]\nNegative: [-3, -1]\n"
+  },
+  {
+    "id": 33,
+    "code": "function compressArray(arr) {\n  let result = [];\n  let i = 0;\n  while (i < arr.length) {\n    let count = 1;\n    while (i + 1 < arr.length && arr[i] === arr[i + 1]) {\n      count++;\n      i++;\n    }\n    result.push([arr[i], count]);\n    i++;\n  }\n  console.log(\"Compressed:\", result);\n}\n\ncompressArray([1, 1, 1, 2, 2, 3, 4, 4, 4, 4]);",
+    "output": "Compressed: [[1,3],[2,2],[3,1],[4,4]]\n",
+    "correct_output": "Compressed: [[1,3],[2,2],[3,1],[4,4]]\n"
+  },
+  {
+    "id": 34,
+    "code": "function splitAndSum(arr) {\n  let oddSum = 0;\n  let evenSum = 0;\n  let divisibleByThree = [];\n\n  for (let i = 0; i < arr.length; i++) {\n    if (arr[i] % 2 === 0) evenSum += arr[i];\n    else oddSum += arr[i];\n\n    if (arr[i] % 3 === 0) divisibleByThree.push(arr[i]);\n  }\n\n  console.log(\"Even Sum:\", evenSum);\n  console.log(\"Odd Sum:\", oddSum);\n  console.log(\"Divisible by 3:\", divisibleByThree);\n}\n\nsplitAndSum([3, 6, 8, 9, 11, 12, 14, 17]);",
+    "output": "Even Sum: 34\nOdd Sum: 23\nDivisible by 3: [3, 6, 9, 12]\n",
+    "correct_output": "Even Sum: 34\nOdd Sum: 23\nDivisible by 3: [3, 6, 9, 12]\n"
+  },
+  {
+    "id": 35,
+    "code": "function labelGrades(scores) {\n  let labels = [];\n  for (let i = 0; i < scores.length; i++) {\n    let score = scores[i];\n    let grade = '';\n\n    if (score >= 90) grade = 'A';\n    else if (score >= 80) grade = 'B';\n    else if (score >= 70) grade = 'C';\n    else if (score >= 60) grade = 'D';\n    else grade = 'F';\n\n    labels.push({ score: score, grade: grade });\n  }\n\n  for (let item of labels) {\n    console.log(\"Score:\", item.score, \"=> Grade:\", item.grade);\n  }\n}\n\nlabelGrades([95, 82, 68, 74, 59]);",
+    "output": "Score: 95 => Grade: A\nScore: 82 => Grade: B\nScore: 68 => Grade: D\nScore: 74 => Grade: C\nScore: 59 => Grade: F\n",
+    "correct_output": "Score: 95 => Grade: A\nScore: 82 => Grade: B\nScore: 68 => Grade: D\nScore: 74 => Grade: C\nScore: 59 => Grade: F\n"
+  },
+  {
+    "id": 36,
+    "code": "function removeDuplicates(arr) {\n  let seen = {};\n  let result = [];\n  for (let i = 0; i < arr.length; i++) {\n    let num = arr[i];\n    if (!seen[num]) {\n      result.push(num);\n      seen[num] = true;\n    }\n  }\n  console.log(\"Without duplicates:\", result);\n}\n\nremoveDuplicates([1, 2, 2, 3, 4, 4, 5, 1, 6]);",
+    "output": "Without duplicates: [1, 2, 3, 4, 5, 6]\n",
+    "correct_output": "Without duplicates: [1, 2, 3, 4, 5, 6]\n"
+  },
+  {
+    "id": 37,
+    "code": "function buildFrequencyTable(arr) {\n  let table = {};\n  for (let i = 0; i < arr.length; i++) {\n    let key = arr[i];\n    if (table[key]) {\n      table[key]++;\n    } else {\n      table[key] = 1;\n    }\n  }\n  for (let key in table) {\n    console.log(\"Value:\", key, \"appears\", table[key], \"times\");\n  }\n}\n\nbuildFrequencyTable(['apple', 'banana', 'apple', 'orange', 'banana', 'apple']);",
+    "output": "Value: apple appears 3 times\nValue: banana appears 2 times\nValue: orange appears 1 times\n",
+    "correct_output": "Value: apple appears 3 times\nValue: banana appears 2 times\nValue: orange appears 1 times\n"
+  },
+  {
+    "id": 38,
+    "code": "function reverseWords(sentence) {\n  let words = sentence.split(\" \");\n  let reversed = [];\n  for (let i = words.length - 1; i >= 0; i--) {\n    reversed.push(words[i]);\n  }\n  let final = reversed.join(\" \");\n  console.log(\"Reversed:\", final);\n}\n\nreverseWords(\"JavaScript is fun to learn\");",
+    "output": "Reversed: learn to fun is JavaScript\n",
+    "correct_output": "Reversed: learn to fun is JavaScript\n"
+  },
+  {
+    "id": 39,
+    "code": "function findMinMax(arr) {\n  let min = arr[0];\n  let max = arr[0];\n  for (let i = 1; i < arr.length; i++) {\n    if (arr[i] < min) min = arr[i];\n    if (arr[i] > max) max = arr[i];\n  }\n  console.log(\"Minimum:\", min);\n  console.log(\"Maximum:\", max);\n}\n\nfindMinMax([33, 12, 67, 45, 2, 89, 24]);",
+    "output": "Minimum: 2\nMaximum: 89\n",
+    "correct_output": "Minimum: 2\nMaximum: 89\n"
+  },
+  {
+    "id": 40,
+    "code": "function indexOfAll(arr, target) {\n  let indexes = [];\n  for (let i = 0; i < arr.length; i++) {\n    if (arr[i] === target) {\n      indexes.push(i);\n    }\n  }\n  if (indexes.length === 0) {\n    console.log(target + \" not found\");\n  } else {\n    console.log(\"Indexes of\", target, \":\", indexes);\n  }\n}\n\nindexOfAll([5, 3, 7, 5, 9, 5, 1], 5);",
+    "output": "Indexes of 5 : [0, 3, 5]\n",
+    "correct_output": "Indexes of 5 : [0, 3, 5]\n"
+  },
+  {
+    "id": 41,
+    "code": "function flatten2DArray(matrix) {\n  let flat = [];\n  for (let i = 0; i < matrix.length; i++) {\n    for (let j = 0; j < matrix[i].length; j++) {\n      flat.push(matrix[i][j]);\n    }\n  }\n  console.log(\"Flattened:\", flat);\n}\n\nlet matrix = [\n  [1, 2, 3],\n  [4, 5, 6],\n  [7, 8, 9]\n];\n\nflatten2DArray(matrix);",
+    "output": "Flattened: [1,2,3,4,5,6,7,8,9]\n",
+    "correct_output": "Flattened: [1,2,3,4,5,6,7,8,9]\n"
+  },
+  {
+    "id": 42,
+    "code": "function compareArrays(a, b) {\n  if (a.length !== b.length) {\n    console.log(\"Arrays are not equal\");\n    return;\n  }\n  for (let i = 0; i < a.length; i++) {\n    if (a[i] !== b[i]) {\n      console.log(\"Arrays differ at index\", i);\n      return;\n    }\n  }\n  console.log(\"Arrays are equal\");\n}\n\ncompareArrays([1, 2, 3], [1, 2, 3]);",
+    "output": "Arrays are equal\n",
+    "correct_output": "Arrays are equal\n"
+  },
+  {
+    "id": 43,
+    "code": "function sumDiagonal(matrix) {\n  let sum = 0;\n  for (let i = 0; i < matrix.length; i++) {\n    sum += matrix[i][i];\n  }\n  console.log(\"Diagonal Sum:\", sum);\n}\n\nlet mtx = [\n  [5, 1, 9],\n  [2, 7, 6],\n  [4, 3, 8]\n];\n\nsumDiagonal(mtx);",
+    "output": "Diagonal Sum: 20\n",
+    "correct_output": "Diagonal Sum: 20\n"
+  },
+  {
+    "id": 44,
+    "code": "function countWords(sentence) {\n  let words = sentence.trim().split(/\\s+/);\n  let total = words.length;\n  console.log(\"Total words:\", total);\n}\n\nlet text = \"  JavaScript is a powerful language   \";\ncountWords(text);",
+    "output": "Total words: 5\n",
+    "correct_output": "Total words: 5\n"
+  },
+  {
+    "id": 45,
+    "code": "function mergeSortedArrays(a, b) {\n  let result = [];\n  let i = 0, j = 0;\n  while (i < a.length && j < b.length) {\n    if (a[i] < b[j]) {\n      result.push(a[i]);\n      i++;\n    } else {\n      result.push(b[j]);\n      j++;\n    }\n  }\n  while (i < a.length) result.push(a[i++]);\n  while (j < b.length) result.push(b[j++]);\n  console.log(\"Merged:\", result);\n}\n\nmergeSortedArrays([1, 3, 5], [2, 4, 6]);",
+    "output": "Merged: [1,2,3,4,5,6]\n",
+    "correct_output": "Merged: [1,2,3,4,5,6]\n"
+  },
+  {
+    "id": 46,
+    "code": "function countVowelConsonant(str) {\n  let vowels = \"aeiouAEIOU\";\n  let v = 0, c = 0;\n  for (let ch of str) {\n    if (/[a-zA-Z]/.test(ch)) {\n      if (vowels.includes(ch)) v++;\n      else c++;\n    }\n  }\n  console.log(\"Vowels:\", v);\n  console.log(\"Consonants:\", c);\n}\n\ncountVowelConsonant(\"ChatGPT is cool!\");",
+    "output": "Vowels: 4\nConsonants: 9\n",
+    "correct_output": "Vowels: 4\nConsonants: 9\n"
+  },
+  {
+    "id": 47,
+    "code": "function arrayStats(arr) {\n  let sum = 0;\n  let max = arr[0];\n  let min = arr[0];\n  for (let val of arr) {\n    sum += val;\n    if (val > max) max = val;\n    if (val < min) min = val;\n  }\n  let avg = sum / arr.length;\n  console.log(\"Sum:\", sum);\n  console.log(\"Average:\", avg);\n  console.log(\"Max:\", max);\n  console.log(\"Min:\", min);\n}\n\narrayStats([7, 3, 9, 1, 5]);",
+    "output": "Sum: 25\nAverage: 5\nMax: 9\nMin: 1\n",
+    "correct_output": "Sum: 25\nAverage: 5\nMax: 9\nMin: 1\n"
+  },
+  {
+    "id": 48,
+    "code": "function removeFalsyValues(arr) {\n  let result = [];\n  for (let i = 0; i < arr.length; i++) {\n    if (arr[i]) {\n      result.push(arr[i]);\n    }\n  }\n  console.log(\"Filtered:\", result);\n}\n\nremoveFalsyValues([0, 1, false, 2, '', 3, null, undefined, 4]);",
+    "output": "Filtered: [1,2,3,4]\n",
+    "correct_output": "Filtered: [1,2,3,4]\n"
+  },
+  {
+    "id": 49,
+    "code": "function countCharFrequency(str) {\n  let freq = {};\n  for (let ch of str) {\n    if (ch === ' ') continue;\n    freq[ch] = (freq[ch] || 0) + 1;\n  }\n  for (let key in freq) {\n    console.log(key + \": \" + freq[key]);\n  }\n}\n\ncountCharFrequency(\"banana split\");",
+    "output": "b: 1\na: 3\nn: 2\ns: 1\np: 1\nl: 1\ni: 1\nt: 1\n",
+    "correct_output": "b: 1\na: 3\nn: 2\ns: 1\np: 1\nl: 1\ni: 1\nt: 1\n"
+  },
+  {
+    "id": 50,
+    "code": "function checkDuplicates(arr) {\n  let seen = new Set();\n  let duplicates = [];\n  for (let i = 0; i < arr.length; i++) {\n    if (seen.has(arr[i])) {\n      duplicates.push(arr[i]);\n    } else {\n      seen.add(arr[i]);\n    }\n  }\n  console.log(\"Duplicates:\", duplicates);\n}\n\ncheckDuplicates([4, 2, 3, 4, 5, 2, 1, 6]);",
+    "output": "Duplicates: [4,2]\n",
+    "correct_output": "Duplicates: [4,2]\n"
+  }
+
+]
