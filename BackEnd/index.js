@@ -1509,7 +1509,7 @@ app.post('/api/studio-run', async (req, res) => {
   console.log("📥 LANGUAGE:", language);
 
   try {
-    const output = await runUserCode(code, input, language);
+    const output = await runUserCode(language, code, input); // ✅ fixed argument order
     console.log("✅ OUTPUT:", output);
     res.json({ output });
   } catch (err) {
@@ -1517,6 +1517,7 @@ app.post('/api/studio-run', async (req, res) => {
     res.status(500).json({ error: err.toString() });
   }
 });
+
 
 
 
