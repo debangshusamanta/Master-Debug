@@ -11,8 +11,7 @@ dotenv.config();
 const port = process.env.PORT || 5000;
 
 const allowedOrigins = [
-  'http://localhost:3000',
-  'https://masterdebug.vercel.app',
+  'https://master-debug.vercel.app/',
 ];
 
 // allow requests from your frontend
