@@ -59,8 +59,10 @@ const LevelsPage = () => {
   // Fetch all levels for the section (e.g., cpp, java)
   useEffect(() => {
     setLoading(true);
-    fetch(`${import.meta.env.VITE_API_BASE_URL}/levels/${section}`)
+    const url = (`${import.meta.env.VITE_API_BASE_URL}/levels/${section}`)
+    console.log("👉 Fetching from:", url); // TEMP LOG
 
+    fetch(url)
       .then((res) => {
         if (!res.ok) throw new Error('Section not found');
         return res.json();
