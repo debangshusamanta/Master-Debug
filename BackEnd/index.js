@@ -10,23 +10,11 @@ const app = express();
 dotenv.config();
 const port = process.env.PORT || 3000;
 
-const allowedOrigins = [
-  'https://master-debug.vercel.app',
-];
 
-// allow requests from your frontend
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE']
+  origin: 'https://master-debug.vercel.app',
+  methods: ['GET', 'POST'],
 }));
-
 
 app.use(express.json());
 app.use(bodyParser.json());
