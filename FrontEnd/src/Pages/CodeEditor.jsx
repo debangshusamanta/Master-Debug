@@ -165,7 +165,6 @@ const EnergeticVSCodeClone = () => {
                             className="bg-black border text-white border-gray-600 rounded px-2 py-1 cursor-pointer"
                         >
                             <option value="cpp">C++</option>
-                            <option value="java">Java</option>
                             <option value="python">Python</option>
                         </select>
 

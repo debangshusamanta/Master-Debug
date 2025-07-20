@@ -208,7 +208,7 @@ const HomePage = () => {
               <button onClick={() => navigate('/levelspage/cpp')} className='text-7xl cursor-pointer
             hover:font-bold  bg-gradient-to-r from-[#0a1128] via-blue-900 to-[#074d69] bg-clip-text text-transparent'>C++</button>
               {/* Java */}
-              <button onClick={() => navigate('/levelspage/java')} className='text-7xl  cursor-pointer hover:font-bold  bg-gradient-to-r from-[#0a1128] via-blue-800 to-[#074d69] bg-clip-text text-transparent'>Java</button>
+              {/* <button onClick={() => navigate('/levelspage/java')} className='text-7xl  cursor-pointer hover:font-bold  bg-gradient-to-r from-[#0a1128] via-blue-800 to-[#074d69] bg-clip-text text-transparent'>Java</button> */}
               {/* Python */}
               <button onClick={() => navigate('/levelspage/python')} className='pb-2 text-7xl cursor-pointer hover:font-bold  bg-gradient-to-r from-[#0a1128] via-blue-800 to-[#074d69] bg-clip-text text-transparent'>Python</button>
               {/* JavaScript */}
