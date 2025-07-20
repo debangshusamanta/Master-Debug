@@ -79,7 +79,14 @@ const LevelsPage = () => {
 
   const headingText = section === 'cpp' ? 'C++' : section.charAt(0).toUpperCase() + section.slice(1);
 
-  if (loading) return <p className="text-white text-5xl flex justify-center items-center">Loading...</p>;
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen bg-black">
+        <div className="w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full animate-spin shadow-lg shadow-blue-700"></div>
+      </div>
+    );
+  }
+
   if (error) return <p className="text-white text-2xl">{error}</p>;
 
 
