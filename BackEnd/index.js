@@ -1497,7 +1497,7 @@ app.post('/api/studio-run', async (req, res) => {
   console.log("📥 LANGUAGE:", language);
 
   try {
-    const output = await runUserCode(language, code, input); // ✅ fixed argument order
+    const output = await runUserCode( code, input, language); 
     console.log("✅ OUTPUT:", output);
     res.json({ output });
   } catch (err) {

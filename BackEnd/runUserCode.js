@@ -45,11 +45,6 @@ export default function runUserCode(code, input = "", languageOverride = "") {
         runCmd = ['python', `${tempDir}/${filename}.py`];
         break;
 
-      case 'js':
-        fileExt = 'js';
-        runCmd = ['node', `${tempDir}/${filename}.js`];
-        break;
-
       default:
         return reject("❌ Unsupported language.");
     }
