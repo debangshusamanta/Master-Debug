@@ -56,30 +56,21 @@ export default function runCode(code) {
     fs.writeFileSync(filePath, code);
 
     const runProcess = () => {
-      const proc = spawn(runCmd[0], runCmd.slice(1));
+      const proc = spawn(runCmd[0], runCmd.slice(1), { timeout: 5000 });
       let stdout = '', stderr = '';
-
-      const timeout = setTimeout(() => {
-        proc.kill();
-        return reject("⏰ Execution timed out after 5 seconds.");
-      }, 5000);
 
       proc.stdout.on('data', data => stdout += data.toString());
       proc.stderr.on('data', data => stderr += data.toString());
 
       proc.on('close', code => {
-        clearTimeout(timeout);
-
         try {
           fs.unlinkSync(filePath);
           if (language === 'cpp') fs.unlinkSync(`${tempDir}/${filename}`);
           if (language === 'java') fs.unlinkSync(`${tempDir}/${filename}.class`);
-        } catch (err) {
-          console.error("⚠️ Cleanup failed:", err);
-        }
+        } catch {}
 
-        if (code !== 0 && language !== 'java' && language !== 'python') {
-          return reject(`❌ Runtime Error:\n${stderr || 'Unknown error occurred'}`);
+        if (code !== 0 || (stderr && language !== 'java' && language !== 'python')) {
+          return reject("❌ There is bug in your code...\n");
         }
 
         resolve(`🎉 Congratulations! ✅ You successfully fixed all bugs!\n\n Your Output:\n${stdout}`);
@@ -89,24 +80,13 @@ export default function runCode(code) {
     if (compileCmd.length > 0) {
       const compile = spawn(compileCmd[0], compileCmd.slice(1));
       let compileErr = '';
-
       compile.stderr.on('data', data => compileErr += data.toString());
 
       compile.on('close', code => {
-        // Java-specific: check if .class file exists
-        if (language === 'java') {
-          const classFilePath = `${tempDir}/${filename}.class`;
-          if (!fs.existsSync(classFilePath)) {
-            fs.unlinkSync(filePath);
-            return reject(`❌ Java compilation failed:\n${compileErr || 'No class file generated.'}`);
-          }
-        }
-
         if (code !== 0) {
           fs.unlinkSync(filePath);
-          return reject(`❌ Compilation Error:\n${compileErr}`);
+          return reject(`❌ There is bug in your code...\n`);
         }
-
         runProcess();
       });
     } else {
