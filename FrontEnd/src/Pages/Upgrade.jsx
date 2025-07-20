@@ -12,6 +12,7 @@ const Upgrade = () => {
     const [Payment, setPayment] = useState(false)
     const [isPro, setisPro] = useState(false)
     const [ProGem, setProGem] = useState(0)
+    const [email, setemail] = useState("")
 
 
 
@@ -25,6 +26,7 @@ const Upgrade = () => {
                 if (docSnap.exists()) {
                     const data = docSnap.data();
                     setisPro(data.isPro);
+                    setemail(data.email)
 
                     // Add gems if payment was just completed
                     if (ProGem > 0) {
@@ -128,7 +130,7 @@ const Upgrade = () => {
                                     {/* Email */}
                                     <div className='flex gap-6 text-md text-gray-500 border border-gray-300 rounded-lg px-4 py-2'>
                                         <span className='text-gray-700'>Email:</span>
-                                        <span>debangshu.dev001@gmail.com</span>
+                                        <span>{email}</span>
                                     </div>
 
                                     {/* Cardholder Name */}
