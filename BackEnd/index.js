@@ -1467,26 +1467,26 @@ app.get('/api/levels/:section', (req, res) => {
 
 //Run the code for check if is right or not for (Debug levels place)
 app.post('/api/run', async (req, res) => {
-  const { code, input, language } = req.body;
+  const { code } = req.body;
 
   if (!code || typeof code !== 'string') {
     return res.status(400).json({ error: '❌ Code must be a non-empty string.' });
   }
 
-  console.log("🔵 Received code:\n", code); // Log incoming code
-  console.log("🟠 Received input:\n", input); // Optional: log input
+  console.log("🔵 Received code:\n", code);
 
   try {
-    const output = await runCode(code, input, language); // ✅ Pass both code + input
-    console.log("✅ Code executed successfully:\n", output); // Log output
-    res.json({ output }); // Send output back to frontend
+    const output = await runCode(code); // only pass code
+    console.log("✅ Code executed successfully:\n", output);
+    res.json({ output });
   } catch (err) {
-    console.error("❌ Execution Error:\n", err); // Log error
+    console.error("❌ Execution Error:\n", err);
     res.status(500).json({
       error: err?.toString() || 'Unknown error occurred while running the code.'
     });
   }
 });
+
 
 
 // run the users code 
