@@ -78,14 +78,51 @@ const LevelsPage = () => {
   }, [section]);
 
   const headingText = section === 'cpp' ? 'C++' : section.charAt(0).toUpperCase() + section.slice(1);
+if (loading) {
+  return (
+    <div className="h-screen w-screen flex justify-center items-center bg-black">
+      <div className="flex gap-6">
+        {/* Bouncing Balls */}
+        <div className="w-6 h-6 bg-pink-500 rounded-full animate-bounce shadow-lg shadow-pink-500"></div>
+        <div className="w-6 h-6 bg-purple-500 rounded-full animate-bounce animation-delay-200 shadow-lg shadow-purple-500"></div>
+        <div className="w-6 h-6 bg-blue-500 rounded-full animate-bounce animation-delay-400 shadow-lg shadow-blue-500"></div>
 
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen bg-black">
-        <div className="w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full animate-spin shadow-lg shadow-blue-700"></div>
+        {/* Bouncing Squares */}
+        <div className="w-6 h-6 bg-yellow-500 animate-bounce-square shadow-lg shadow-yellow-500"></div>
+        <div className="w-6 h-6 bg-green-500 animate-bounce-square animation-delay-300 shadow-lg shadow-green-500"></div>
       </div>
-    );
-  }
+
+      {/* Custom CSS for square animation */}
+      <style>{`
+        .animate-bounce-square {
+          animation: bounceSquare 1s infinite ease-in-out;
+        }
+
+        @keyframes bounceSquare {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-20px) rotate(15deg);
+          }
+        }
+
+        .animation-delay-200 {
+          animation-delay: 0.2s;
+        }
+
+        .animation-delay-300 {
+          animation-delay: 0.3s;
+        }
+
+        .animation-delay-400 {
+          animation-delay: 0.4s;
+        }
+      `}</style>
+    </div>
+  );
+}
+
 
   if (error) return <p className="text-white text-2xl">{error}</p>;
 

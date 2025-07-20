@@ -143,8 +143,9 @@ const Level_Data = () => {
       });
 
       const data = await res.json();
+      setOutput('⏳ Code is Checking...')
       if (res.ok) {
-        setOutput('Code is Checking...')
+        
         setOutput(data.output || '✅ No output from program');
         setisComplete(true);
 
