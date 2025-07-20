@@ -5,34 +5,14 @@
 * {
   font-family: "Outfit", sans-serif;
 }
-
-/* === Final Stick-Style Horizontal Scrollbar, Vertical Hidden === */
 .custom-scroll {
-  overflow-y: scroll;        /* Required for Firefox to apply styles */
-  overflow-x: auto;          /* Enable horizontal scrolling */
-  scrollbar-width: none;     /* Hide vertical scrollbar in Firefox */
-  position: relative;
+  overflow: auto;             /* Allow scrolling */
+  -ms-overflow-style: none;   /* Hide scrollbar in IE and Edge */
+  scrollbar-width: none;      /* Hide scrollbar in Firefox */
 }
 
-/* Hide vertical scrollbar and show horizontal scrollbar (Chrome, Safari, Edge) */
 .custom-scroll::-webkit-scrollbar {
-  width: 0px;                /* Hide vertical scrollbar */
-  height: 8px;               /* Show horizontal scrollbar */
-}
-
-.custom-scroll::-webkit-scrollbar-track {
-  background: #000;          /* Black background for track */
-  border-radius: 4px;
-}
-
-.custom-scroll::-webkit-scrollbar-thumb {
-  background: #444;          /* Dark gray stick-style thumb */
-  border-radius: 4px;
-  transition: background 0.2s ease-in-out;
-}
-
-.custom-scroll::-webkit-scrollbar-thumb:hover {
-  background: #666;          /* Slightly lighter thumb on hover */
+  display: none;              /* Hide scrollbar in Chrome, Safari, Edge */
 }
 
 
