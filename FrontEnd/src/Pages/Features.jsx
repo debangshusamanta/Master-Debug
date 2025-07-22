@@ -55,7 +55,7 @@ const Features = () => {
 
               <ul className="xl:text-2xl lg:text-xl flex flex-col gap-8 text-white list-disc">
                 <li>✅ Multi-language Support
-                  Code in C++, Java, Python — with more coming soon!</li>
+                  Code in C++, Python — with more coming soon!</li>
                 <li>✅ Attractive VS Code-Like Editor "Master Code Studio".</li>
                 <li>✅ Clear Terminal Output
                   Run your code and see live terminal output.( Input support included!)</li>

@@ -74,7 +74,7 @@ const About = () => {
 
                   <ul>
                     <li>✅ Multi-language Support
-                      Code in C++, Java, Python — with more coming soon!</li>
+                      Code in C++, Python — with more coming soon!</li>
                       <li>✅ Beautiful VS Code-Like Editor</li>
                       <li>✅ More In Features Section</li>
                   </ul>
