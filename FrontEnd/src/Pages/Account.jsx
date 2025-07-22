@@ -326,7 +326,7 @@ const Account = () => {
                 <div className="flex flex-wrap gap-6 justify-center w-full">
                   {[
                     { name: "C++", count: CpplevelCount, colors: "from-purple-800 to-purple-500", bar: "bg-yellow-400" },
-                    { name: "Java", count: JavalevelCount, colors: "from-red-600 to-pink-500", bar: "bg-green-300" },
+                    // { name: "Java", count: JavalevelCount, colors: "from-red-600 to-pink-500", bar: "bg-green-300" },
                   ].map((lang, idx) => (
                     <div
                       onClick={() => {
