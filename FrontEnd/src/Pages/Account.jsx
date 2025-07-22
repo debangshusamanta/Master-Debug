@@ -85,7 +85,7 @@ useEffect(() => {
         setName(data.name || "No name");
 
         // Check and update isPro if needed
-        if ((data.gem === 50 || data.gem > 50) && !data.isPro) {
+        if ((data.gem === 400 || data.gem > 400) && !data.isPro) {
           await updateDoc(userRef, { isPro: true });
         }
 
