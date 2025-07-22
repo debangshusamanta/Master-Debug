@@ -31,7 +31,6 @@ const Account = () => {
   const [isPro, setisPro] = useState(false);
   const [logoutBox, setlogoutBox] = useState(false);
   const [showAvatarSelector, setShowAvatarSelector] = useState(false);
-  const [selectedAvatar, setSelectedAvatar] = useState('');
 
   const [avatar, setAvatar] = useState(localStorage.getItem('selectedAvatar') || 'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/man-user-circle-icon.png');
 
@@ -72,36 +71,47 @@ const Account = () => {
     return () => unsubscribe();
   }, []);
 
-  useEffect(() => {
-    const auth = getAuth();
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        const uid = user.uid;
-        const userRef = doc(db, "users", uid);
-        const userSnap = await getDoc(userRef);
-        if (userSnap.exists()) {
-          const data = userSnap.data();
-          setisdataLoaded(true);
-          setName(data.name || "No name");
-          setJoinDate(data.signupDate?.toDate().toLocaleDateString('en-GB', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric',
-          }) || '');
-          setCpplevelCount(data.cpplevelCount || 0);
-          setJavalevelCount(data.javalevelCount || 0);
-          setPythonlevelCount(data.pythonlevelCount || 0);
-          setJSlevelCount(data.jslevelCount || 0);
-          setGem(data.gem || 0);
-          setLastClaimedMilestone(data.lastClaimedMilestone || 0);
-          setUserExist(true);
+useEffect(() => {
+  const auth = getAuth();
+  const unsubscribe = onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      const uid = user.uid;
+      const userRef = doc(db, "users", uid);
+      const userSnap = await getDoc(userRef);
+
+      if (userSnap.exists()) {
+        const data = userSnap.data();
+        setisdataLoaded(true);
+        setName(data.name || "No name");
+
+        // Check and update isPro if needed
+        if ((data.gem === 50 || data.gem > 50) && !data.isPro) {
+          await updateDoc(userRef, { isPro: true });
         }
-      } else {
-        setisdataLoaded(false);
+
+        setJoinDate(
+          data.signupDate?.toDate().toLocaleDateString("en-GB", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          }) || ""
+        );
+        setCpplevelCount(data.cpplevelCount || 0);
+        setJavalevelCount(data.javalevelCount || 0);
+        setPythonlevelCount(data.pythonlevelCount || 0);
+        setJSlevelCount(data.jslevelCount || 0);
+        setGem(data.gem || 0);
+        setLastClaimedMilestone(data.lastClaimedMilestone || 0);
+        setUserExist(true);
       }
-    });
-    return () => unsubscribe();
-  }, []);
+    } else {
+      setisdataLoaded(false);
+    }
+  });
+
+  return () => unsubscribe();
+}, []);
+
 
   useEffect(() => {
     const updateStatusAndGems = async () => {
