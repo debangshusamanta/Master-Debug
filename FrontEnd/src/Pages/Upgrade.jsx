@@ -11,7 +11,6 @@ const Upgrade = () => {
 
     const navigate = useNavigate()
     const [isPro, setisPro] = useState(false)
-    const [ProGem, setProGem] = useState(0)
     const [Upgradediv, setUpgradediv] = useState(false)
 
 
@@ -24,28 +23,16 @@ const Upgrade = () => {
                 const userRef = doc(db, 'users', user.uid);
                 const docSnap = await getDoc(userRef);
                 if (docSnap.exists()) {
-                    const data = docSnap.data();
-                    setisPro(data.isPro);
-
-                    // Add gems if payment was just completed
-                    if (ProGem > 0) {
-                        const updatedGem = (data.gem || 0) + ProGem;
-
-                        await setDoc(userRef, {
-                            ...data,
-                            gem: updatedGem,
-                        });
-
-                        setProGem(0);
-                    }
-                } else {
-                    setisPro(false);
+                    setisPro(docSnap.data().isPro);
                 }
+            } else {
+                setisPro(false);
             }
         });
 
         return () => unsubscribe();
-    }, [ProGem]);
+    }, []);
+
 
 
 
@@ -101,7 +88,7 @@ const Upgrade = () => {
 
                     {/* Header */}
                     <h1 className="text-4xl font-bold text-center mb-4 text-green-700 flex items-center justify-center gap-3">
-                        Welcome To, Master Debug!
+                        Welcome To, Master Debug Pro!
                         <img src={assets.logo} alt="logo" className="w-14 h-14 object-contain" />
                     </h1>
 
@@ -128,7 +115,7 @@ const Upgrade = () => {
                         </ul>
                     </div>
 
-                    {/* Additional CTA or Status */}
+                    {/* Additional Status */}
                     <div className="text-center">
                         <p className="text-lg font-medium text-green-700 mb-4">
                             You're already enjoying all Pro features. Keep coding and debugging like a master! ⚔️

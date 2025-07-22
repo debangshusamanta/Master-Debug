@@ -71,46 +71,50 @@ const Account = () => {
     return () => unsubscribe();
   }, []);
 
-useEffect(() => {
-  const auth = getAuth();
-  const unsubscribe = onAuthStateChanged(auth, async (user) => {
-    if (user) {
-      const uid = user.uid;
-      const userRef = doc(db, "users", uid);
-      const userSnap = await getDoc(userRef);
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        const uid = user.uid;
+        const userRef = doc(db, "users", uid);
+        const userSnap = await getDoc(userRef);
 
-      if (userSnap.exists()) {
-        const data = userSnap.data();
-        setisdataLoaded(true);
-        setName(data.name || "No name");
+        if (userSnap.exists()) {
+          const data = userSnap.data();
+          setisdataLoaded(true);
+          setName(data.name || "No name");
 
-        // Check and update isPro if needed
-        if ((data.gem === 400 || data.gem > 400) && !data.isPro) {
-          await updateDoc(userRef, { isPro: true });
+          // Check and update isPro if needed
+          if ((data.gem >= 20) && !data.isPro) {
+            await updateDoc(userRef, {
+              isPro: true,
+              gem: data.gem + 100
+            });
+          }
+
+
+          setJoinDate(
+            data.signupDate?.toDate().toLocaleDateString("en-GB", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            }) || ""
+          );
+          setCpplevelCount(data.cpplevelCount || 0);
+          setJavalevelCount(data.javalevelCount || 0);
+          setPythonlevelCount(data.pythonlevelCount || 0);
+          setJSlevelCount(data.jslevelCount || 0);
+          setGem(data.gem || 0);
+          setLastClaimedMilestone(data.lastClaimedMilestone || 0);
+          setUserExist(true);
         }
-
-        setJoinDate(
-          data.signupDate?.toDate().toLocaleDateString("en-GB", {
-            day: "numeric",
-            month: "long",
-            year: "numeric",
-          }) || ""
-        );
-        setCpplevelCount(data.cpplevelCount || 0);
-        setJavalevelCount(data.javalevelCount || 0);
-        setPythonlevelCount(data.pythonlevelCount || 0);
-        setJSlevelCount(data.jslevelCount || 0);
-        setGem(data.gem || 0);
-        setLastClaimedMilestone(data.lastClaimedMilestone || 0);
-        setUserExist(true);
+      } else {
+        setisdataLoaded(false);
       }
-    } else {
-      setisdataLoaded(false);
-    }
-  });
+    });
 
-  return () => unsubscribe();
-}, []);
+    return () => unsubscribe();
+  }, []);
 
 
   useEffect(() => {
@@ -284,11 +288,11 @@ useEffect(() => {
             {showAvatarSelector && (
               <div
                 className="fixed  inset-0 bg-transparent bg-opacity-50 flex flex-wrap justify-center items-center z-50"
-                onClick={() => setShowAvatarSelector(false)} 
+                onClick={() => setShowAvatarSelector(false)}
               >
                 <div
                   className="bg-gray-500 p-4 rounded shadow-lg relative z-60"
-                  onClick={(e) => e.stopPropagation()} 
+                  onClick={(e) => e.stopPropagation()}
                 >
                   <ProfileAvatarSelector
                     avatarOptions={avatarOptions}
