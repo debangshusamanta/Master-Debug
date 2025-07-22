@@ -85,7 +85,7 @@ const Account = () => {
           setName(data.name || "No name");
 
           // Check and update isPro if needed
-          if ((data.gem >= 20) && !data.isPro) {
+          if ((data.gem >= 400) && !data.isPro) {
             await updateDoc(userRef, {
               isPro: true,
               gem: data.gem + 100
