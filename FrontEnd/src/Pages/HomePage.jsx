@@ -131,12 +131,19 @@ const HomePage = () => {
       {/* Main Section */}
       <div className='flex w-full mx-auto  pb-24 relative'>
 
-      {/* Navbar */}
-        <div className='fixed right-5 top-2 flex gap-8 items-center'>
+        {/* Navbar */}
+        <div className='fixed right-5 top-2 flex lg:gap-8 md:gap-5 sm:gap-4 items-center'>
 
           <button onClick={() => { navigate('/codeeditor') }} className='shadow-lg hover:scale-105 bg-gradient-to-r from-violet-800 via-red-600 to-pink-600 px-6 py-1 rounded-full text-2xl text-white font-semibold flex gap-3 cursor-pointer'><img src={assets.feather} className='w-8' alt="Pro" /> Use Code Studio <img src={assets.rightArrow} className='w-7 invert' alt="Arrow" /></button>
 
-          <div onClick={() => { navigate('/upgrade') }} className='w-fit h-fit px-4 py-1 rounded-full bg-gradient-to-r from-blue-500 via-pink-500 to-red-500 text-white text-2xl font-semibold shadow-lg hover:scale-105  cursor-pointer  flex gap-4 items-center'>{isPro ? 'PRO' : 'Upgrade To Pro'}<img src={assets.feather} className='w-8' alt="magic" /></div>
+          <div
+            onClick={() => { navigate('/upgrade') }}
+            className='hidden md:flex w-fit h-fit px-4 py-1 rounded-full bg-gradient-to-r from-blue-500 via-pink-500 to-red-500 text-white text-2xl font-semibold shadow-lg hover:scale-105 cursor-pointer gap-4 items-center'
+          >
+            {isPro ? 'PRO' : 'Upgrade To Pro'}
+            <img src={assets.feather} className='w-8' alt="magic" />
+          </div>
+
 
           <img
             onClick={() => navigate('/account')}
@@ -163,19 +170,19 @@ const HomePage = () => {
 
         </div>
 
-        <div className='flex md:gap-[80px] md:items-center md:ml-10 lg:gap-[120px]  xl:gap-[200px] 2xl:gap-[450px]'>
+        <div className='flex sm:flex-col md:flex-row md:gap-[80px] md:items-center md:ml-10 lg:gap-[120px]  xl:gap-[200px] 2xl:gap-[450px]'>
 
           {/* Left Section */}
-          <div className=' lg:ml-12 xl:ml-20 2xl:ml-32 lg:pt-10 md:pt-20'>
+          <div className='sm:ml-20 md:ml-0 sm:mt-20 md:mt-1 lg:ml-12 xl:ml-20 2xl:ml-32 lg:pt-10 md:pt-20'>
 
             <img src={assets.logo} alt="Master Debug Logo" className='w-20 h-20 mb-2' />
             <h4 className='text-white pb-2 text-3xl'>Welcome To </h4>
             {/* Website Name */}
-            <h4 className="md:text-7xl lg:text-8xl xl:text-9xl pb-4 text-white"> MASTER</h4>
-            <h1 className='md:text-7xl lg:text-8xl xl:text-9xl pb-8 bg-gradient-to-r from-[#3cc8ff] via-blue-500 to-[#dbf3fd] bg-clip-text text-transparent'>DEBUG</h1>
+            <h4 className="sm:text-8xl md:text-7xl lg:text-8xl xl:text-9xl pb-4 text-white"> MASTER</h4>
+            <h1 className='sm:text-8xl md:text-7xl lg:text-8xl xl:text-9xl pb-8 bg-gradient-to-r from-[#3cc8ff] via-blue-500 to-[#dbf3fd] bg-clip-text text-transparent'>DEBUG</h1>
             {/* Some Description */}
 
-            <h1 className="md:text-md lg:text-xl xl:text-2xl text-gray-900 pb-4 font-bold">
+            <h1 className="sm:text-xl md:text-md lg:text-xl xl:text-2xl text-gray-900 pb-4 font-bold">
               <Typewriter
                 words={['Fix The Bugs And Level Up Your Skill...']}
                 loop={1} // 0 = infinite loop i use 1 because i want to show the effect for 1 time.
@@ -201,7 +208,7 @@ const HomePage = () => {
           </div>
 
           {/* Right Section */}
-          <div className='pt-40'>
+          <div className='pt-40 sm:ml-40 md:ml-0'>
             <h1 className='text-sky-200 text-2xl pb-10 pl-14'>Choose Your Language</h1>
             <div className="flex flex-col gap-10">
               {/* C++ */}
@@ -223,7 +230,7 @@ const HomePage = () => {
       {/* Bottom */}
       <div className='w-[85%] border-t border-gray-400 m-auto flex'>
         {/* Bottom Left */}
-        <div>
+        <div className='hidden md:block'>
           <p className=" text-gray-200 text-xs mt-4">
             <a href="/terms" className="underline hover:text-sky-300">Terms & Conditions</a>
           </p>
@@ -248,7 +255,7 @@ const HomePage = () => {
           </p>
         </div>
         {/* Bottom Right */}
-        <div className='flex flex-col justify-start w-[10%] mt-3'>
+        <div className='flex-col justify-start w-[10%] mt-3 hidden md:flex '>
           <a className='text-white underline text-xs' href='/followus'>Follow Me</a>
           <a className='text-white underline text-xs' href='/contactus'> Contact Me</a>
         </div>

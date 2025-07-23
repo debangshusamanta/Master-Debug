@@ -22,27 +22,31 @@ import PaymentStatus from './Pages/PaymentStatus.jsx';
 const App = () => {
   const navigate = useNavigate();
 
-  //  Prevent right-click + developer shortcuts
 useEffect(() => {
-  // ❌ Only block keyboard shortcuts (leave right-click enabled)
   const handleKeyDown = (e) => {
+    const key = e.key.toLowerCase();
     if (
-      (e.ctrlKey && ['c', 'u', 's'].includes(e.key.toLowerCase())) ||
-      (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i') ||
-      e.key === 'F12'
+      (e.ctrlKey && ['c', 'v', 'u', 's'].includes(key)) || 
+      (e.ctrlKey && e.shiftKey && key === 'i') ||          
+      key === 'f12'                                        
     ) {
       e.preventDefault();
     }
   };
 
-  document.addEventListener('keydown', handleKeyDown);
+  const handleRightClick = (e) => {
+    e.preventDefault();
+  };
 
-  // ✅ No contextmenu blocking anymore
+  document.addEventListener('keydown', handleKeyDown);
+  document.addEventListener('contextmenu', handleRightClick);
 
   return () => {
     document.removeEventListener('keydown', handleKeyDown);
+    document.removeEventListener('contextmenu', handleRightClick);
   };
 }, []);
+
 
 
   //  Auth protection
